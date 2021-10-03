@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TinTuc" Class="TinTucModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\PRIMESQL;Initial Catalog=TinTuc;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TinTucConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="MaTin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TieuDeTin" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NoiDungTin" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MaLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TheLoaiTin_TinTuc" Member="TheLoaiTin" ThisKey="MaLoai" OtherKey="MaLoai" Type="TheLoaiTin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TheLoaiTin" Member="TheLoaiTins">
+    <Type Name="TheLoaiTin">
+      <Column Name="MaLoai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="TheLoaiTin_TinTuc" Member="TinTucs" ThisKey="MaLoai" OtherKey="MaLoai" Type="TinTuc" />
+    </Type>
+  </Table>
+</Database>

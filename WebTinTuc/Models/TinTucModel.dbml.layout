@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TinTucModel">
+  <DataContextMoniker Name="/TinTucModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4e8bd8b2-9fe6-4a97-b36e-b88e2f68318a" absoluteBounds="5.25, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TinTucModelDataContext/TinTuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe78ed28-d36e-4cd0-b5b4-dc90c71a3069" absoluteBounds="5.2650000000000006, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88dd24e4-9969-462f-a9df-39cfa0bd5cf8" absoluteBounds="2.5, 3.125, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/TinTucModelDataContext/TheLoaiTin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94d110cb-3e8e-4098-bc1d-17ebb1a7076b" absoluteBounds="2.515, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 3.72199625651042); (5.25 : 3.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TinTucModelDataContext/TheLoaiTin/TheLoaiTin_TinTuc" />
+      <nodes>
+        <classShapeMoniker Id="88dd24e4-9969-462f-a9df-39cfa0bd5cf8" />
+        <classShapeMoniker Id="4e8bd8b2-9fe6-4a97-b36e-b88e2f68318a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

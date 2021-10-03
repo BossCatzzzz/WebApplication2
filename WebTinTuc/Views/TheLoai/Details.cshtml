@@ -1,0 +1,26 @@
+﻿@model WebTinTuc.Models.TheLoaiTin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Thể loại tin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên thể loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTheLoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaLoai }) |
+    @Html.ActionLink("Trở về", "Index")
+</p>

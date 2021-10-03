@@ -1,0 +1,35 @@
+﻿/*.table {*/
+    /*background: radial-gradient(circle, rgba(0, 94, 251, 1) 0%, rgba(22, 70, 107, 1) 100%);*/
+    /*padding: 8px 30px;
+    color: white;
+    margin: 30px 0;
+    border: double;
+    border-radius: 30px;
+    transition: background 0.5s;
+    text-align: center;
+    border: 3px solid green;
+}*/
+p{
+    font-family: Tahoma;
+    text-transform: uppercase;
+}
+/*th{
+    text-align:center;
+    color: red;
+}*/
+/*h2{
+    text-align:center;
+    color:red;
+}*/
+h4{
+    
+}
+tr td{
+    font-size: medium;
+}
+ footer{
+     border-bottom:double;
+
+     text-align:end;
+     background-color: darkgray;
+ }

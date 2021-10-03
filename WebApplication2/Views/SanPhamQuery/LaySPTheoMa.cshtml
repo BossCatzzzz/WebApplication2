@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.LayMotSPResult
+
+@{
+    ViewBag.Title = "LaySPTheoMa";
+}
+
+<h2>LaySPTheoMa</h2>
+
+<div>
+    <h4>LayMotSPResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_LOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_LOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MASANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MASANPHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSANPHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINHANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINHANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

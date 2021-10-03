@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplication2.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+}
+
+<h2>Danh sách sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "ThemSanPham")
+</p>
+
+
+<form method="post">
+    <p>
+        Đơn giá min: <input id="text1" name="txtMin" type="text"/>
+        Đơn giá max: <input id="text1" name="txtMax" type="text"/>
+        <input id="submit1" type="submit" value="xác nhận" />
+    </p>
+</form>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Id loại
+        </th>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_LOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MASANPHAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSANPHAM)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.HINHANH)*@
+
+                <img src=" ~/Images/@Url.Content(item.HINHANH)"
+                     alt="Image"
+                     width="180"
+                     height="120" />
+            </td>
+            <td>
+                
+                <form method="post" action="/SanPham/CapNhatGia?id=@item.MASANPHAM">
+                    <input type="number" step="500"  name="txtGia"  value="@item.DONGIA" >
+                    <input id="submit1" type="submit" value="Cập nhật giá" onclick="return confirm('Có chắc muốn cập nhật giá');">
+                </form>
+
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.ID }) |
+                @*@Html.ActionLink("Xoa", "SanPham", new { id = item.ID }, new { onclick = "return confirm('Are you sure?');" });*@
+                <a href="@Url.Action("Xoa","SanPham", new { id = item.ID })" onclick="return confirm('Có chắc muốn xóa sản phẩm này?');">
+                    xóa |
+                </a>
+                @Html.ActionLink("Chi tiết", "LaySPTheoMa", new { id = item.MASANPHAM }) |
+                @*@Html.ActionLink("Cập nhật giá", "CapNhatGia", new { id = item.MASANPHAM  }) |*@
+                @Html.ActionLink("Delete", "XoaSP", new { id = item.MASANPHAM }, new { onclick = "return confirm('Are you sure?');" });
+
+            </td>
+
+        </tr>
+    }
+
+</table>

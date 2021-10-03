@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Model2">
+  <DataContextMoniker Name="/Model2DataContext" />
+  <nestedChildShapes>
+    <classShape Id="a422a0e9-f3eb-47ed-884e-8c4e4204fa16" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Model2DataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bbba644-501c-433c-916b-70a236d895ff" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="569a57a4-a7b2-4aa6-902f-a5c201500ec2" absoluteBounds="0.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/Model2DataContext/LOAISANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09cf6039-bffc-437c-ba01-cbc1b668991a" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.94314697265625); (3.5 : 1.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Model2DataContext/LOAISANPHAM/LOAISANPHAM_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="569a57a4-a7b2-4aa6-902f-a5c201500ec2" />
+        <classShapeMoniker Id="a422a0e9-f3eb-47ed-884e-8c4e4204fa16" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

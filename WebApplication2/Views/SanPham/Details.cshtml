@@ -1,0 +1,63 @@
+﻿@model WebApplication2.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chi tiết sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_LOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_LOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MASANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MASANPHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSANPHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINHANH)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.HINHANH)*@
+            <img src=" ~/Images/@Url.Content(Model.HINHANH)"
+                 alt="Image"
+                 width="180"
+                 height="120" />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

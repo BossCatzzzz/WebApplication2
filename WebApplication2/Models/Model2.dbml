@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYSANPHAM2" Class="Model2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\PRIMESQL;Initial Catalog=QUANLYSANPHAM2;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYSANPHAM2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SANPHAM" Member="SANPHAMs">
+    <Type Name="SANPHAM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_LOAI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASANPHAM" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HINHANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LOAISANPHAM_SANPHAM" Member="LOAISANPHAM" ThisKey="ID_LOAI" OtherKey="ID" Type="LOAISANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAISANPHAM" Member="LOAISANPHAMs">
+    <Type Name="LOAISANPHAM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MALOAI" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAISANPHAM_SANPHAM" Member="SANPHAMs" ThisKey="ID" OtherKey="ID_LOAI" Type="SANPHAM" />
+    </Type>
+  </Table>
+  <Function Name="dbo.XoaSP" Method="XoaSP">
+    <Parameter Name="masp" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CapNhatGia" Method="CapNhatGia">
+    <Parameter Name="masp" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="giamoi" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayAllSP" Method="LayAllSP">
+    <ElementType Name="LayAllSPResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_LOAI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASANPHAM" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HINHANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LayMotSP" Method="LayMotSP">
+    <Parameter Name="masp" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="LayMotSPResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_LOAI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASANPHAM" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HINHANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ThemSP" Method="ThemSP">
+    <Parameter Name="masp" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tensp" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ma_loai" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hinh" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

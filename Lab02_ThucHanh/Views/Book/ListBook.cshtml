@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListBook</title>
+</head>
+<body>
+    <div>
+        <ul>
+                @{ 
+                    foreach (var item in ViewBag.BookList)
+                    {
+                        <li>@item</li>
+                    }
+                }
+        </ul>
+    </div>
+</body>
+</html>

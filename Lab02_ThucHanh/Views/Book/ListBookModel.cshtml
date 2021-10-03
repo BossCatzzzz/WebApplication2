@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Lab02_ThucHanh.Models.Book>
+
+@{
+    ViewBag.Title = "ListBookModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<h2><b>DANH SÁCH SÁCH</b></h2>
+<p>
+    @Html.ActionLink(" ", "Create",null, new { @class = "glyphicon glyphicon glyphicon-plus btn btn-info" })
+</p>
+<table class="table">
+    @*<link href="~/Content/Style.css" rel="stylesheet" />*@
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Tiêu đề
+        </th>
+        <th>
+            Tác giả
+        </th>
+        <th>
+            Ảnh bìa
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Author
+            </td>
+            <td>
+                <img src="@item.Image_cover" width="100" height="100" />
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "glyphicon glyphicon-pencil btn btn-success" })
+                @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "glyphicon glyphicon-eye-open btn btn-primary" })
+                @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "glyphicon glyphicon-remove-circle btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
